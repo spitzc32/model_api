@@ -1,0 +1,8 @@
+torch
+torchvision
+torchaudio
+flair
+numpy
+pandas
+nltk
+sentencepiece==0.1.95
