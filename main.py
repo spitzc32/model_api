@@ -4,14 +4,14 @@ from fastapi import  APIRouter, Query, Depends
 from typing import Optional
 from sqlalchemy.orm import Session
 import sqlalchemy
-from flair.data import Sentence
+#from flair.data import Sentence
 
 from api.db.settings import app
 from api.db.init_db import get_db
 from api.model import User
 from api.schema import *
 from api.modules.encryption import *
-from model import Bi_LSTM_CRF
+#from model import Bi_LSTM_CRF
 
 from starlette import status
 from starlette.responses import JSONResponse
@@ -108,10 +108,10 @@ def model(
     *, 
     word_text
     ):
-    model = Bi_LSTM_CRF.load('./checkpoints/final-model.pt')
-    txt = Sentence(word_text)
+    #model = Bi_LSTM_CRF.load('./checkpoints/final-model.pt')
+    #txt = Sentence(word_text)
 
-    model.predict(txt)
+    #model.predict(txt)
     return JSONResponse(
             status_code=status.HTTP_201_CREATED,
             content={

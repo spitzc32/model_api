@@ -6,3 +6,8 @@ numpy
 pandas
 nltk
 sentencepiece==0.1.95
+uvicorn
+fastapi
+sqlalchemy
+starlette
+alembic
