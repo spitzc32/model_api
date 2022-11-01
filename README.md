@@ -57,3 +57,6 @@ our main file already setup uvicorn so no need to setup uvicorn command to run i
 
 Here we see that we have a pregenerated swagger ui with the list of our APIs
 
+## Other References
+For mac but just change the poetry thingy to what is indicated in our commands
+https://harrisonmorgan.dev/2021/02/15/getting-started-with-fastapi-users-and-alembic/
