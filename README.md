@@ -1,6 +1,16 @@
 # model_api
 Model Repo and API for our thesis dissertation
 
+## Setup (Docker)
+All the commands are already stated under the docker compose file, to setup
+what we need is the code and our docker app. If you already have docker, run the following command:
+
+`docker-compose build`
+
+to run the images and create the containers, run:
+
+`docker-compose up`
+
 ## Setup and Installation of DB
 First and foremost, setup a database from postgres. If you haven't downloaded postgres yet, please install for the local setup.
 

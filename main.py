@@ -16,6 +16,7 @@ from api.modules.encryption import *
 from starlette import status
 from starlette.responses import JSONResponse
 api_router = APIRouter()
+roles = ["Doctor", "Researcher"]
 
 @api_router.post("/api/user/create", status_code=200)
 def create_user(
@@ -28,7 +29,6 @@ def create_user(
     db: Session = Depends(get_db)
 ): 
     try:
-        roles = ["Doctor", "Researcher"]
         user = User(
             first_name=first_name,
             last_name=last_name,
@@ -58,7 +58,7 @@ def create_user(
             content={
                 "code": 400,
                 "error": {
-                    "message": f"User already exists. please log in",
+                    "message": f"User already exists. please log in, {e}",
                 }
             },
         )
@@ -78,7 +78,13 @@ def login(
                 status_code=status.HTTP_201_CREATED,
                 content={
                     "code": 200,
-                    "data": user
+                    "data": {
+                        "user_id": user.id,
+                        "first_name": user.first_name,
+                        "last_name": user.last_name,
+                        "email": user.email,
+                        "role": roles[user.role_id-1]
+                    }
                 },
             )
         else:

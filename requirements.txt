@@ -11,3 +11,7 @@ fastapi
 sqlalchemy
 starlette
 alembic
+psycopg2
+databases
+asyncpg
+passlib

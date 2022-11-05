@@ -12,8 +12,8 @@ import configparser
 config = configparser.ConfigParser()
 config.read('.env')
 
-SECRET_KEY = config['TOKEN']['SECRET_KEY']
-ALGORITHM = config["TOKEN"]["ALGORITHM"]
+SECRET_KEY = "3729ewodhwoefw09ef80e9wdfhf3049890aso!082sqwodwy09"
+ALGORITHM = "SHA-256"
 
 
 def create_access_token(data: dict, expires_delta: timedelta = None):
