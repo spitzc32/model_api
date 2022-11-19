@@ -4,19 +4,20 @@ from fastapi import  APIRouter, Query, Depends
 from typing import Optional
 from sqlalchemy.orm import Session
 import sqlalchemy
-#from flair.data import Sentence
+from flair.data import Sentence
 
 from api.db.settings import app
 from api.db.init_db import get_db
 from api.model import User
 from api.schema import *
 from api.modules.encryption import *
-#from model import Bi_LSTM_CRF
+from environment import tagger, roles
 
 from starlette import status
 from starlette.responses import JSONResponse
 api_router = APIRouter()
-roles = ["Doctor", "Researcher"]
+
+
 
 @api_router.post("/api/user/create", status_code=200)
 def create_user(
@@ -112,18 +113,24 @@ def login(
 @api_router.get("/api/model", status_code=200)
 def model(
     *, 
-    word_text
+    word_text: str
     ):
-    #model = Bi_LSTM_CRF.load('./checkpoints/final-model.pt')
-    #txt = Sentence(word_text)
 
-    #model.predict(txt)
+    txt = Sentence(word_text)
+    tagger.predict(txt)
+    labels, tags = [], []
+
+    for entity in txt.get_spans('ner'):
+        labels.append(entity.text)
+        tags.append(entity.get_label("ner").value)
+
     return JSONResponse(
             status_code=status.HTTP_201_CREATED,
             content={
                 "code": 200,
                 "data": {
-                    "message": "still on progress",
+                    "labels": labels,
+                    "tags": tags
                 }
             },
         )

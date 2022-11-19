@@ -8,11 +8,6 @@ from flair.embeddings import (
 )
 from flair.data import Sentence
 
-word_embeddings = "distilbert-base-uncased-finetuned-sst-2-english"
-context_embeddings = "news-forward-fast"
-context_backward = "news-backward-fast"
-
-
 
 class PretrainedEmbeddings():
     """
@@ -30,17 +25,11 @@ class PretrainedEmbeddings():
     def __init__(self, 
         word_embedding: str, 
         forward_embedding: str,
-        backward_embedding: str,
-        hidden_size: int,
-        no_of_models: int,
-        corpus
+        backward_embedding: str
         ) -> None:
         self.word_embedding = word_embedding,
         self.forward_embedding = forward_embedding
         self.backward_embedding = backward_embedding
-
-        self.linear = nn.Linear(hidden_size * no_of_models, no_of_models)
-        self.corpus = Sentence(" ".join(corpus))
 
     
     def forward(self):
@@ -49,7 +38,9 @@ class PretrainedEmbeddings():
         flair_forward_embedding = FlairEmbeddings(self.forward_embedding)
         flair_backward_embedding = FlairEmbeddings(self.backward_embedding)
 
-        bert_embedding = TransformerWordEmbeddings(self.word_embedding)
+        bert_embedding = TransformerWordEmbeddings(model=self.word_embedding,
+                                       fine_tune=True,
+                                       use_context=True,)
 
         # Next Concatenate all embeddings above
         stacked_embeddings = StackedEmbeddings(
@@ -59,7 +50,7 @@ class PretrainedEmbeddings():
                 bert_embedding,
             ])
 
-        return stacked_embeddings
+        return bert_embedding
         
        
            
