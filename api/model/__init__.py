@@ -26,3 +26,5 @@ class Role(base):
    id = Column(Integer, primary_key=True, index=True)
    role_name = Column(String(100), nullable=True)
 
+   
+

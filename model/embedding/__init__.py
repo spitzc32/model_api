@@ -50,7 +50,7 @@ class PretrainedEmbeddings():
                 bert_embedding,
             ])
 
-        return bert_embedding
+        return stacked_embeddings
         
        
            

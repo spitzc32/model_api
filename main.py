@@ -5,11 +5,12 @@ from typing import Optional
 from sqlalchemy.orm import Session
 import sqlalchemy
 from flair.data import Sentence
+import pandas as pd
 
 from api.db.settings import app
 from api.db.init_db import get_db
 from api.model import User
-from api.schema import *
+from api.schema import UserSchema, RoleSchema,  WordSchema
 from api.modules.encryption import *
 from environment import tagger, roles
 
@@ -110,19 +111,24 @@ def login(
             },
         )
 
-@api_router.get("/api/model", status_code=200)
+@api_router.get("/api/model", response_model=WordSchema)
 def model(
     *, 
-    word_text: str
+    word: str,
+    file_name: str
     ):
 
-    txt = Sentence(word_text)
+    txt = Sentence(word.word_text)
     tagger.predict(txt)
     labels, tags = [], []
 
     for entity in txt.get_spans('ner'):
         labels.append(entity.text)
         tags.append(entity.get_label("ner").value)
+    
+    pd.DataFrame({'Entity': labels,
+        'Tags': tags}
+    ).to_csv(f"./data/CSVs/{file_name}.csv")
 
     return JSONResponse(
             status_code=status.HTTP_201_CREATED,

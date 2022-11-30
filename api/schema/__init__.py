@@ -28,5 +28,8 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     role: Optional[str] = None
 
+class WordSchema(BaseModel):
+    word_text: str
+
 
 
