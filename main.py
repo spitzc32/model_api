@@ -118,7 +118,7 @@ def model(
     file_name: str
     ):
 
-    txt = Sentence(word.word_text)
+    txt = Sentence(word)
     tagger.predict(txt)
     labels, tags = [], []
 
