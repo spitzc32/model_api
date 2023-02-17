@@ -1,10 +1,11 @@
 """
-Program:        viterbi.py
-Programmer/s:   Jayra Ortiz
-Description:    Calculation of Loss and analyzing hidden states
-Date Written:   Aug 29, 2022
-Last Modified:  Aug 29, 2022
-Data:           Viterbi Algorithm
+PROGRAM:      viterbi.py
+PROGRAMMER:   Jayra Gaile Ortiz
+VERSION 1:    Aug. 29, 2022 
+PURPOSE:      Calculation of Loss and analyzing hidden states
+ALGORITHM:    Viterbi Algorithm,
+              Forward propagation to Viterbi loss,
+              Log sum exponent
 """
 
 

@@ -1,9 +1,13 @@
 """
-Program:        init.py
-Programmer/s:   Jayra Ortiz
-Description:    Main component for the initialization of Bi-LSTM-SPAN-CRF layers
-Date Written:   Aug. 29, 2022
-Last Modified:  Aug. 29, 2022
+PROGRAM:      init.py
+PROGRAMMER:   Jayra Gaile Ortiz
+VERSION 1:    Aug. 29, 2022 
+PURPOSE:      Main component for the initialization of Bi-LSTM-SPAN-CRF layers
+ALGORITHM:    Creating internal tag category,
+              Implemeting the model parameters and layers of the BIO-tagging
+              Viterbi Algorithm for decoder and calculating loss
+
+
 
 """
 

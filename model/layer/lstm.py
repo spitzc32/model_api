@@ -1,10 +1,10 @@
 """
-Program:        lstm.py
-Programmer/s:   Jayra Ortiz
-Description:    Implementation of LSTM model
-Date Written:   Aug 29, 2022
-Last Modified:  Aug 29, 2022
-
+PROGRAM:      lstm.py
+PROGRAMMER:   Jayra Gaile Ortiz
+VERSION 1:    Aug. 29, 2022 
+PURPOSE:      Implementation of LSTM model
+ALGORITHM:    LSTM model for BIO tagging features to succeeding models (CRF and Span Classifier),
+              Forward Propagation
 """
 
 

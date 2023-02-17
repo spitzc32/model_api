@@ -1,9 +1,10 @@
 """
-Program:        init.py
-Programmer/s:   Jayra Ortiz
-Description:    Implementation of Embedding layers (FLAIR and RoBERTa)
-Date Written:   Aug. 29, 2022
-Last Modified:  Nov. 30, 2022 
+PROGRAM:      init.py
+PROGRAMMER:   Jayra Gaile Orti z
+VERSION 1:    Aug. 29, 2022 
+VERSION 2:    Nov. 30, 2022
+PURPOSE:      Implementation of Embedding layers (FLAIR and RoBERTa)
+ALGORITHM:    Initiating the context and tramsformer based embeddings and concatenating their outputs for the NER model  
 
 """
 

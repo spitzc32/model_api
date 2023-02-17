@@ -1,10 +1,11 @@
 """
-Program:        bioes.py
-Programmer/s:   Jayra Ortiz
-Description:    Doing span extraction from BIO tagging outputs
-Date Written:   Aug 29, 2022
-Last Modified:  Aug 29, 2022
-
+PROGRAM:      bioes.py
+PROGRAMMER:   Jayra Gaile Ortiz
+VERSION 1:    Aug. 29, 2022 
+PURPOSE:      for span extraction to BIO tagging outputs
+ALGORITHM:    function for getting spans from BIO models,
+              Span determination cycle from prediction
+              
 """
 
 

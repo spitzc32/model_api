@@ -1,9 +1,9 @@
 """
-Program:        span.py
-Programmer/s:   Jayra Ortiz
-Description:    Implementation of Span Classifier
-Date Written:   Aug 29, 2022
-Last Modified:  Aug 29, 2022
+PROGRAM:      span.py
+PROGRAMMER:   Jayra Gaile Ortiz
+VERSION 1:    Aug. 29, 2022 
+PURPOSE:      Implementation of Span Classifier
+ALGORITHM:    functions for calculating score and accuracy 
 
 """
 
