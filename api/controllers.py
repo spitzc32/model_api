@@ -1,3 +1,10 @@
+# PROGRAM:      controllers.py --> Program for requesting and submitting the data
+# PROGRAMMER:   Jayra Gaile Ortiz
+# VERSION 1:    08-29-22 Initial API setup and i2b2 converted sets
+# PURPOSE:      Requests and submits data to the server
+# ALGORITHM:    Handles data to be requested and submitted
+
+
 from fastapi import FastAPI
 
 app = FastAPI(

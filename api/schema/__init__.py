@@ -1,3 +1,11 @@
+# PROGRAM:      __init__.py --> Program for defining schemas
+# PROGRAMMER:   Jayra Gaile Ortiz
+# VERSION 1:    08-29-22 Initial API setup and i2b2 converted sets
+# REVISION 1.1: 11-30-22 Added Feature for CSV and model trainer output
+# PURPOSE:      Define schema's data types
+# ALGORTHIM:    Define the components for each Base Model         
+
+
 from datetime import datetime
 from typing import List, Optional, Sequence
 
