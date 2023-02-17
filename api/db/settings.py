@@ -1,3 +1,11 @@
+# PROGRAM:      settings.py --> Program to handle all configurations inside the API
+# PROGRAMMER:   Jayra Gaile Ortiz
+# VERSION 1:    08-29-22 Initial API setup and i2b2 converted sets
+# REVISION 1.1: 11-05-22 Fizes to port web
+# PURPOSE:      Handles configurations for the API
+# ALGORITHM:    Stores app documentations, handles API configurations
+
+
 """
     This file includes all the configuration file for API
 """
