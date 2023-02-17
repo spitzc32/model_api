@@ -1,3 +1,14 @@
+"""
+Program:        crf.py
+Programmer/s:   Jayra Ortiz
+Description:    Implementation of CRF model
+Date Written:   Aug 29, 2022
+Last Modified:  Aug 29, 2022
+
+"""
+
+
+
 import torch
 
 import flair

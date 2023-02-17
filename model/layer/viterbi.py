@@ -1,3 +1,13 @@
+"""
+Program:        viterbi.py
+Programmer/s:   Jayra Ortiz
+Description:    Calculation of Loss and analyzing hidden states
+Date Written:   Aug 29, 2022
+Last Modified:  Aug 29, 2022
+Data:           Viterbi Algorithm
+"""
+
+
 from typing import Tuple
 
 import numpy as np

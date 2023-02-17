@@ -1,3 +1,16 @@
+"""
+Program:        lstm.py
+Programmer/s:   Jayra Ortiz
+Description:    Implementation of LSTM model
+Date Written:   Aug 29, 2022
+Last Modified:  Aug 29, 2022
+
+"""
+
+
+
+
+
 import torch
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 import flair

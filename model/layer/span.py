@@ -1,3 +1,13 @@
+"""
+Program:        span.py
+Programmer/s:   Jayra Ortiz
+Description:    Implementation of Span Classifier
+Date Written:   Aug 29, 2022
+Last Modified:  Aug 29, 2022
+
+"""
+
+
 from functools import lru_cache
 from itertools import chain
 from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple, Union

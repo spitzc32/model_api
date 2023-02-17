@@ -1,3 +1,15 @@
+"""
+Program:        init.py
+Programmer/s:   Jayra Ortiz
+Description:    Main component for the initialization of Bi-LSTM-SPAN-CRF layers
+Date Written:   Aug. 29, 2022
+Last Modified:  Aug. 29, 2022
+
+"""
+
+
+
+
 import logging
 from pathlib import Path
 from typing import List, Optional, Tuple, Union

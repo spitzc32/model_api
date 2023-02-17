@@ -1,3 +1,15 @@
+"""
+Program:        bioes.py
+Programmer/s:   Jayra Ortiz
+Description:    Doing span extraction from BIO tagging outputs
+Date Written:   Aug 29, 2022
+Last Modified:  Aug 29, 2022
+
+"""
+
+
+
+
 from collections import defaultdict
 from typing import Dict
 
