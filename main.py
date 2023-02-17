@@ -1,3 +1,13 @@
+"""
+PROGRAM:      root > main.py
+PROGRAMMER:   Jayra Gaile Ortiz
+VERSION 1:    Sept. 20, 2022 
+VERSION 2:    Jan. 09, 2023
+PURPOSE:      Main Runner of the API for login, signup and model runner
+ALGORITHM:    For Login, Sign Up and model algorithm response for REST API
+
+"""
+
 import uvicorn
 from fastapi import  APIRouter, Query, Depends
 
@@ -30,6 +40,18 @@ def create_user(
     role_id: int,
     db: Session = Depends(get_db)
 ): 
+    """
+    An api for user creation within the database.
+    :param first_name: the first name of the user
+    :param last_name: last name of the user.
+    :param email: email of the user
+    :param password: password of the user
+    :param role_id: role number of user
+    :param db: database connection initialized in PSQL
+
+    :returns: json response that contains entered 
+        credentials except password.
+    """
     try:
         user = User(
             first_name=first_name,
@@ -72,6 +94,18 @@ def login(
     password: str = Query(None, min_length=3, max_length=30),
     db: Session = Depends(get_db)
 ):
+    """
+    An api for user retrieval of informtion using credentials
+        within the database.
+    
+    :param email: email of the user
+    :param password: password of the user
+    :param role_id: role number of user
+    :param db: database connection initialized in PSQL
+
+    :returns: json response that contains entered 
+        credentials except password.
+    """
     try:
         user = db.query(User).filter(User.email == email).one()
         
@@ -117,7 +151,14 @@ def model(
     word: str,
     file_name: str
     ):
+    """
+    An api for serving the model for the PHI classification.
+    :param word: list of word tokens in a paragraph.
+    :param file_name: name of the wile.
 
+    :returns: json response that contains labeled 
+        tags their respective classification.
+    """
     txt = Sentence(word)
     tagger.predict(txt)
     labels, tags = [], []

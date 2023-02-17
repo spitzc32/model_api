@@ -1,3 +1,13 @@
+"""
+PROGRAM:      root > environment.py
+PROGRAMMER:   Jayra Gaile Ortiz
+VERSION 1:    Sept. 21, 2022 
+VERSION 2:    Jan. 03, 2023
+PURPOSE:      Environments that are often used in the program
+ALGORITHM:    Variable storing.
+
+"""
+
 from model.embedding import PretrainedEmbeddings
 from model.layer import Bi_LSTM_CRF
 
