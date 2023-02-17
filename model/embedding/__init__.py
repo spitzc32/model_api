@@ -1,3 +1,13 @@
+"""
+Program:        init.py
+Programmer/s:   Jayra Ortiz
+Description:    Implementation of Embedding layers (FLAIR and RoBERTa)
+Date Written:   Aug. 29, 2022
+Last Modified:  Nov. 30, 2022 
+
+"""
+
+
 import torch.nn as nn
 from flair.embeddings import (
     TransformerWordEmbeddings,
