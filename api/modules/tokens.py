@@ -1,3 +1,13 @@
+# PROGRAM:      tokens.py --> Program that handles tokens
+# PROGRAMMER:   Jayra Gaile Ortiz
+# VERSION 1:    08-29-22 Initial API setup and i2b2 converted sets
+# REVISION 1.1: 11-05-22 Added Docker configuration setup and fixes to some APIs in accordance to 
+#               docker setup
+# PURPOSE:      Creates and validates tokens
+# ALGORITHM:    Imported data to be read and written using ConfigParser, 
+#               creates tokens and checks its validity
+
+
 from jose import jwt
 from datetime import datetime, timedelta
 from api.schema import TokenData

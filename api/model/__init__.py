@@ -1,3 +1,11 @@
+# PROGRAM:      __init__.py --> Separates models upon change of requirements
+# PROGRAMMER:   Jayra Gaile Ortiz
+# VERSION 1:    08-29-22 Initial API setup and i2b2 converted sets
+# REVISION 1.1: 11-30-22 Added Feature for CSV and model trainer output
+# PURPOSE:      Creates a base class containing different components for Users and Roles
+# ALGORITHM:    Creates a base class using declarative_base() then assigns data to respective columns
+
+
 """
 Models To be separated upon change of requirements
 """
