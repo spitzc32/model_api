@@ -11,7 +11,7 @@ Models To be separated upon change of requirements
 """
 
 from enum import unique
-from sqlalchemy import Integer, String, Column, Float, TIMESTAMP
+from sqlalchemy import Integer, String, Column, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.schema import ForeignKey, UniqueConstraint
@@ -27,6 +27,8 @@ class User(base):
     password = Column(String(256), nullable=False)
     role_id = Column(ForeignKey("role.id"), nullable=False)
     role = relationship("Role", backref="role_id", lazy=True)
+    user_license = Column(String(8),unique=True, nullable=False)
+    is_verified =  Column(Boolean, default=False)
 
 
 class Role(base):

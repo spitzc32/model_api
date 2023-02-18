@@ -38,6 +38,7 @@ def create_user(
     email: str = Query(None, min_length=3, max_length=50),
     password: str = Query(None, min_length=3, max_length=30),
     role_id: int,
+    user_license: str,
     db: Session = Depends(get_db)
 ): 
     """
@@ -58,7 +59,8 @@ def create_user(
             last_name=last_name,
             email=email,
             password=get_password_hash(password),
-            role_id=role_id
+            role_id=role_id,
+            user_license=user_license
         )
         db.add(user)
         db.commit()
@@ -72,7 +74,9 @@ def create_user(
                         "first_name": user.first_name,
                         "last_name": user.last_name,
                         "email": user.email,
-                        "role": roles[role_id-1]
+                        "role": roles[role_id-1],
+                        "license": user.user_license,
+                        "is_verified": user.is_verified,
                     }
                 },
             )
@@ -110,19 +114,32 @@ def login(
         user = db.query(User).filter(User.email == email).one()
         
         if verify_password(password, user.password):
-            return JSONResponse(
-                status_code=status.HTTP_201_CREATED,
-                content={
-                    "code": 200,
-                    "data": {
-                        "user_id": user.id,
-                        "first_name": user.first_name,
-                        "last_name": user.last_name,
-                        "email": user.email,
-                        "role": roles[user.role_id-1]
-                    }
-                },
-            )
+            if user.is_verified:
+                return JSONResponse(
+                    status_code=status.HTTP_201_CREATED,
+                    content={
+                        "code": 200,
+                        "data": {
+                            "user_id": user.id,
+                            "first_name": user.first_name,
+                            "last_name": user.last_name,
+                            "email": user.email,
+                            "role": roles[user.role_id-1],
+                            "license": user.user_license,
+                            "is_verified": user.is_verified,
+                        }
+                    },
+                )
+            else:
+                return JSONResponse(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    content={
+                        "code": 400,
+                        "error": {
+                            "message": "User not yet verified. please contact mail.arniefraga@gmail.com to verify",
+                        }
+                    },
+                )
         else:
             return JSONResponse(
             status_code=status.HTTP_400_BAD_REQUEST,
