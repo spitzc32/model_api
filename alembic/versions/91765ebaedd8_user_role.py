@@ -31,9 +31,12 @@ def upgrade():
     sa.Column('email', sa.String(length=256), nullable=False),
     sa.Column('password', sa.String(length=256), nullable=False),
     sa.Column('role_id', sa.Integer(), nullable=False),
+    sa.Column('user_license', sa.String(length=8), nullable=False),
+    sa.Column('is_verified', sa.Boolean(), default=False),
     sa.ForeignKeyConstraint(['role_id'], ['role.id'], ),
     sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('email')
+    sa.UniqueConstraint('email'),
+    sa.UniqueConstraint('user_license')
     )
     op.create_index(op.f('ix_user_id'), 'user', ['id'], unique=False)
     # ### end Alembic commands ###
